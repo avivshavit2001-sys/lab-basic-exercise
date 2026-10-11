@@ -1,0 +1,16 @@
+name: Lab Exercise Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exercise-job:
+    runs-on: ubuntu-latest
+    environment: production 
+
+    steps:
+      - name: Print Environment Variable
+        run: echo "The environment is ${{ vars.MY_ENVIORMENT }}"
+
+      - name: Use and Print Secret
+        run: echo "The secret user is ${{ secrets.JB_DEMO_USER }}"
